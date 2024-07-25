@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Application</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-image: url('https://pixewall.com/wp-content/uploads/2023/09/Clouds-Meet-The-Sea-AI-Generated-4K-Wallpapers-2048x1152.jpg')
+        ;
+            background-size: cover
+        ;
+
+            background-repeat: no-repeat
+        ;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid text-center" style="color: azure">
+    <h1 STYLE="font-family: Castellar">Employee Registration</h1>
+    <div class="text-right">
+        <a th:href="@{/new}"><i class="fas fa-user"style="font-size: 30px"></i></a>
+    </div>
+<form th:action="@{/}" style="padding: 100px;max-width: 650px;margin: 0 auto;">
+    <div class="border-primary rounded p-3 shadow">
+<div class="form-group row" style="padding: 30px;">
+    <div style="padding-left: 150px;padding-bottom: 20px">
+        <h4 STYLE="font-family: Castellar"><b>LOGIN</b></h4>
+    </div>
+    <div style="font-family: Castellar;color: aliceblue">
+    <LABEL style="margin-right: 30px;font-size: 20px;"><b>E-mail:</b></LABEL>
+    <input type="email" name="email" style="font-family: Arial;"/>
+    </div>
+    <div style="font-family: Castellar;color: aliceblue">
+        <label STYLE="font-size: 20px;"><b>Password:</b></label>
+    <input type="password" name="pass"/>
+    </div>
+    <div style="padding-top:15px;padding-left: 150px;">
+    <button class="btn-primary rounded" style="font-family: Castellar;width: 75px;font-size: 18px;" type="submit">login</button>
+    </div>
+</div>
+    </div>
+</form>
+</div>
+</body>
+</html>

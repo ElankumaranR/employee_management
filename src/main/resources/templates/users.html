@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <style>body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?q=80&w=2117&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+    ;
+    background-size: cover
+    ;
+    background-repeat: no-repeat
+    ;
+    }</style>
+</head>
+<body>
+
+<div class="container-fluid text-center p-4" style="color: azure">
+    <div>
+    <h2>Manage Employees</h2>
+    </div>
+    <div>
+        <a class="h3" th:href="@{/add}">Add New Employee</a>
+    </div>
+    <div ><form th:action="@{/users}">
+        <input type="text"  name="name" />
+        <button type="submit">search</button>
+    </form>
+    </div>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>Name</th>
+            <th>Qualification</th>
+            <th>Branch</th>
+            <th>E-mail</th>
+            <th>PhoneNo<th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="user : ${ListUsers}">
+        <tr style="color: azure;font-family: 'Times New Roman';font-size: 20px;"><b>
+            <td>EMP-[[${user.id}]]</td>
+            <td>[[${user.name}]]</td>
+            <td>[[${user.qualification}]]</td>
+            <td>[[${user.branch}]]</td>
+            <td>[[${user.email}]]</td>
+            <td>[[${user.phone}]]</td>
+        </b>
+            <td><a class="h4" th:href="@{'/edit/'+${user.id}}">edit</a></td>
+            <td><a class="h4" th:href="@{'/delete/'+${user.id}}">delete</a></td>
+        </tr>
+        </th:block>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
